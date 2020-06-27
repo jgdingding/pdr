@@ -1,0 +1,7 @@
+Justin Gou
+jyg2qhc
+1/21/2020
+postlab1.question.txt
+
+1. What does the "->" refer to? Why is it not simply a ".", as would typically be used to call methods?
+

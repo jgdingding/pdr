@@ -1,0 +1,9 @@
+Justin Gou
+jyg2qhc
+1/31/2020
+difficulties.txt
+
+I was not familiar with the vector methods so I didn't what methods I needed to call.
+To solve this challenge, I simply read the documentation found in the following links:
+http://www.cplusplus.com/reference/vector/vector/
+https://www.geeksforgeeks.org/vector-in-cpp-stl/

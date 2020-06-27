@@ -1,0 +1,7 @@
+Justin Gou
+jyg2qhc
+2/4/2020
+difficulties.txt
+
+I was not familiar with how arrays and pointers to arrays worked so I had some trouble figuring out how to double the size of the stored array.
+I ended up resolving this issue by storing a pointer and simply changing the reference of the pointer when copying the array.

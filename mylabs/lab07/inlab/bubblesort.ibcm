@@ -1,0 +1,67 @@
+C00B 000	jmp	loop	skip over variables
+0005 001 n	dw	5	int n
+003E 002 a[]	dw	3E	int a[]
+0000 003 i	dw	0	int i
+0000 004 j	dw	0	int j
+0001 005 one	dw	1
+0000 006 bffr	dw	0	int bffr (swap buffer)
+0000 007 bffr2	dw	0	int bffr2 (stores a[j-1] info)
+3000 008 loadit	dw	3000	load instruction
+4000 009 stoit	dw	4000	store instruction
+6000 00a subit	dw	6000	subtract instruction
+3001 00b loop	load	n	outer for loop (start of code)
+6003 00c	sub	i
+D03D 00d	jmpe	xit	if (i>=n), goto xit
+E03D 00e	jmpl	xit
+3001 00f	load	n	j = n - 1 for each iteration of i
+6005 010	sub	one           	
+4004 011	store	j           	
+6003 012 loop2	sub	i	inner for loop
+D039 013	jmpe	inc	if (j<=i), increment i (goto inc)
+E039 014	jmpl	inc
+3002 015	load	a[]	if (a[j]>=a[j-1]), skip over swap; get a[j] address
+5004 016	add	j
+4006 017	store	bffr	store a[j] address into bffr
+500A 018	add	subit	create subtract instruction for a[j]
+4020 019	store	020	write subtract instruction
+6005 01a	sub	one	create load instruction for a[j-1]
+600A 01b	sub	subit	remove subit instruction
+4007 01c	store	bffr2	save a[j-1] address
+5008 01d	add	loadit	create loadit instruction
+401F 01e	store	01F	write load instruction
+0000 01f	loadit	a[j-1]
+0000 020	subit	a[j]
+D035 021	jmpe	dec	skip over swap to decrement
+E035 022	jmpl	dec
+3006 023 swap	load	bffr	perform swap; load a[j]
+5009 024	add	stoit	create a store instruction for a[j]
+4032 025	store	032	write the store instruction for a[j]
+3008 026	load	loadit	create load instruction for a[j]
+5006 027	add	bffr	add a[j] address
+4029 028	store	029	write load instruction for a[j]
+0000 029	loadit	a[j]	load a[j]
+4006 02a	store	bffr	store a[j] into bffr (called 'temp' in cpp code)
+3007 02b	load	bffr2	get a[j-1] from bffr2
+5008 02c	add	loadit	create load instruction for a[j-1]
+4031 02d	store	031	write the load instruction
+3007 02e	load	bffr2	create write instruction
+5009 02f	add	stoit
+4034 030	store	034	write store instruction for a[j-1]
+0000 031	loadit	a[j-1]	a[j] = a[j-1]
+0000 032	stoit	a[j]	written by line 025
+3006 033	load	bffr	a[j-1] = original a[j]; load original a[j], stored in bffr
+0000 034	stoit	a[j-1]	written by line 030; end swap
+3004 035 dec	load	j	j--
+6005 036	sub	one
+4004 037	store	j	store back
+C012 038	jmp	loop2	iterate inner loop
+3003 039 inc	load	i	i++
+5005 03a	add	one
+4003 03b	store	i	store back
+C00B 03c	jmp	loop	iterate outer loop
+0000 03d xit	halt		halt
+0004 03e arr			array values
+0002 03f                   	
+0005 040                   	
+0003 041                   	
+0001 042

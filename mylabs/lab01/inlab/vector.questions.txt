@@ -1,0 +1,6 @@
+Justin Gou
+jyg2qhc
+1/21/2020
+vector.questions.txt
+
+1. What are some common vector methods? i.e. push_back, pop_back, at, etc. 

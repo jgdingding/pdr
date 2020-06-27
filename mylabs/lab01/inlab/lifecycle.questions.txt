@@ -1,0 +1,9 @@
+Justin Gou
+jyg2qhc
+1/21/2020
+lifecycle.questions.txt
+
+1. What does the keyword "friend" mean?
+2. How does the syntax for the object's "toString" method work? Using keyword "operator".
+
+

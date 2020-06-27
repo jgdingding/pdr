@@ -1,0 +1,5 @@
+Justin Gou
+jyg2qhc
+2/2/2020
+
+What sorting algorithm does the Unix command "sort" use?

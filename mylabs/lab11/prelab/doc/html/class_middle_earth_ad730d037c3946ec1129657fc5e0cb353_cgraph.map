@@ -1,0 +1,4 @@
+<map id="MiddleEarth::getItinerary" name="MiddleEarth::getItinerary">
+<area shape="rect" id="node1" title="Returns a random list of cities to travel to." alt="" coords="5,5,172,31"/>
+<area shape="rect" id="node2" href="$middleearth_8cpp.html#a35cf3a1047a13ce1fc444fc9fd6db3e9" title="Randomly shuffles objects in given iterator objects." alt="" coords="220,5,281,31"/>
+</map>

@@ -1,0 +1,15 @@
+#Justin Gou
+#jyg2qhc
+#2/23/2020
+#Makefile
+
+CXX=clang++
+CFLAGS=-Wall -O2
+OBJECTS= AVLNode.o tester.o AVLTree.o
+
+avltree: $(OBJECTS)
+	$(CXX) $(CFLAGS) $(OBJECTS) -o avltree
+
+AVLNode.o: AVLNode.cpp AVLNode.h
+tester.o: tester.cpp AVLTree.h AVLNode.h
+AVLTree.o: AVLTree.cpp AVLNode.h AVLTree.h

@@ -1,0 +1,52 @@
+C00A 000	jmp	loop	skip around the variables
+0000 001 i 	dw	0	int i
+0005 002 n	dw	5	int n
+0000 003 curMax	dw	0	int curMax
+002F 004 a	dw	2f	int a[]
+0001 005 one	dw	1         	
+6000 006 subit	dw	6000	subtract instruction
+3000 007 loadit	dw	3000	load instruction
+0000 008 addr 	dw 	0	address of a[i]
+0000 009			leave space for changes
+3004 00a	load	a	load array base
+5001 00b	add	i	add i to array base
+4008 00c	store	addr	store a[i] address
+5007 00d	add		loadit	create load a[i] instruction
+400F 00e	store	00f	write instruction
+0000 00f	loadit	a[i]	load a[i]
+4003 010	store	curMax	set curMax to first element
+3001 011	load	i	i++
+5005 012	add	one
+4001 013	store	i
+3002 014 loop	load	n	if (i>=n), goto xit
+6001 015	sub	i       	
+E02B 016	jmpl	xit
+D02B 017	jmpe	xit         	
+3004 018	load	a	load array base
+5001 019	add	i	add i to array base
+4008 01a	store	addr	store a[i] address
+3006 01b	load	subit	create subtract a[i] instruction
+5008 01c	add	loadit
+401F 01d	store	01F	write instruction
+3003 01e	load	curMax	if a[i]>curMax, curMax = a[i]
+0000 01f	sub	a[i]
+E025 020	jmpl	update
+3001 021	load	i	i+=1
+5005 022	add	one
+4001 023	store	i
+C014 024	jmp	loop	goto loop
+3007 025 update	load	loadit	curMax = a[i] (loads loadit)
+5008 026	add	008	add a[i] address
+4028 027	store	028	write instruction
+0000 028	load	a[i]
+4003 029	store	003	store into curMax
+C021 02a	jmp	021	return to where it left off in loop
+3003 02b xit	load	curMax
+1800 02c	printH		print curMax
+0000 02d	halt		halt
+0000 02e
+0100 02f			a[] values
+0400 030                  	
+0300 031                  	
+0500 032			expected max value
+0200 033

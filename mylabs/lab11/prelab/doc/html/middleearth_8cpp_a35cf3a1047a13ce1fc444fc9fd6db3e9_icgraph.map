@@ -1,0 +1,5 @@
+<map id="shuffle" name="shuffle">
+<area shape="rect" id="node1" title="Randomly shuffles objects in given iterator objects." alt="" coords="224,31,285,56"/>
+<area shape="rect" id="node2" href="$class_middle_earth.html#ad730d037c3946ec1129657fc5e0cb353" title="Returns a random list of cities to travel to." alt="" coords="8,5,174,31"/>
+<area shape="rect" id="node3" href="$class_middle_earth.html#ad8fe036789b54f21f826fa0abdc06580" title="Constructor for MiddleEarth." alt="" coords="5,55,176,80"/>
+</map>

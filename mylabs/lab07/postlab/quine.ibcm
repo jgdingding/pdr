@@ -1,0 +1,21 @@
+B000 000 i	dw	0	int i
+C006 001	jmp	loop	skip over variables
+0014 002 n	dw	0x14	int n; number of lines
+0001 003 one	dw	1
+3000 004 loadit	dw	3000	load instruction
+B000 005 nopit	dw	B000	nop instruction
+3002 006 loop	load	n	if (i>n), goto xit
+6000 007	sub	i
+5005 008	add	nopit     	
+E014 009	jmpl	xit
+3004 00a	load	loadit	create load instruction
+5000 00b	add	i
+6005 00c	sub	nopit
+400E 00d	store	00E	write instruction
+300E 00e	loadit		load data at i (default to 300E because that's what the program prints for this line)
+1800 00f	printH    	
+3000 010	load	i	i++
+5003 011	add	one
+4000 012	store	i
+C006 013	jmp	loop	iterate loop
+0000 014 xit	halt		halt
